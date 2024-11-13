@@ -38,7 +38,7 @@ The function receives three input parameters:
 ##### Output Parameter  
 The function should return the size of the colored image in the unit passed as a parameter.
 
-### Exercise 3: Video Size (CalculateVideo.c)
+### Exercise 3: Video Size ([video.c](video.c))
 
 You are asked to write a C function that calculates the size of a video, which includes both a color section and a generic (black and white) section.
 
