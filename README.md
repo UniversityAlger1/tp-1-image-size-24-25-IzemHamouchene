@@ -1,46 +1,55 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/7KCB2MIS)
-# Master 1 SII : Multimédia
+# Master 1 SII: Multimedia
 
-## TP 3 : Calculate size
-Le but de ce TP est de mettre en pratique les notions apprises durant le [cours](https://canvas.instructure.com/courses/4077355/files/164844328?module_item_id=59396783) pour le calcul des images niveau de gris, couleurs et vidéo.
+## TP 1: Image/Video Size Calculation
 
+The goal of these exercices is to apply the concepts learned during the [course](https://canvas.instructure.com/courses/10470827/files/273054605?module_item_id=118488408) for calculating the size of grayscale, colored images, and videos.
 
-**Pour rappel**  
-Chaque pixel d’une image niveau de gris est codé sur 8 bits.
-Pour la conversion  
-  
-* 1 octet = 8 bits  
-* 1 ko = 1024 octet  
-* 1 mo = 1024 ko  
-* 1 go = 1024 mo  
+**Reminder**  
+Each pixel of a grayscale image (Bitmap) is encoded in 8 bits.  
+For the conversion:  
 
-### Exercice 1 : Image size (CalculateImageSize.c)
+* 1 byte = 8 bits  
+* 1 KB = 1024 bytes  
+* 1 MB = 1024 KB  
+* 1 GB = 1024 MB  
 
-Il vous est demandé d’écrire un programme en langage C qui calcule la taille d’une image niveau de gris (**en ko**) et couleur (**en mo**).  
+### Exercise 1: Grayscale Image Size ([grayScaleImage.c](grayScaleImage.c))
 
-##### Paramètre d’entrées (2)
-Le programme reçoit deux paramètres en entrées (langeure et largeur) de l’image sous format string.
+You are asked to write a C program that calculates the size of a grayscale Bitmap image (in bytes).  
 
-##### Paramètre de sortie (2)
-Le programme doit afficher (printf):  
-1. La taille de l’image niveau de gris  
-2. La taille de l’image couleur.  
+##### Input Parameters (2)  
+The function receives two input parameters in integer format:
+- w: width of the image
+- h: height of the image
 
-_Les valeurs de sortie doivent être affichées avec deux chiffres après la virgule._
-  
-  
-### Exercice 2 : Video size (CalculateVideo.c)
-  
-Il vous est demandé d’écrire un programme en langage C qui calcule la taille d'une vidéo qui comprend la moitié du temps avec des images niveau de gris et l'autre moitié avec des images  couleur. Exemple : si la vidéo dure 4 minutes, 2 minutes sont en niveau de gris et 2 sont n couleur.  
-  
-##### Paramètre d’entrées (3)
-Le programme reçoit les paramètres suivants (ordonées):  
-1. Taille de l'image en niveau de gris (**en ko**)  
-2. Durée de la vidéo (en seconde)  
-3. FPS (Frame Per Second)  
-  
-##### Paramètre de sortie (1)
-Le programme doit afficher (printf):  
-1. La taille de la vidéo (la moitié du temps est en niveau de gris et l'autres moitié en couleur)(**en go**)  
-  
-_Les valeurs de sortie doivent être affichées avec deux chiffres après la virgule._
+##### Output Parameter  
+The function should return the size of the grayscale image.
+
+### Exercise 2: Colored Image Size ([coloredBitmap.c](coloredBitmap.c))
+
+You are asked to write a C program that calculates the size of a colored Bitmap image.
+
+##### Input Parameters (3)  
+The function receives three input parameters:
+- w: width of the image
+- h: height of the image
+- unit: the size of the image should be converted to this unit
+
+##### Output Parameter  
+The function should return the size of the colored image in the unit passed as a parameter.
+
+### Exercise 3: Video Size ([video.c](video.c))
+
+You are asked to write a C function that calculates the size of a video, which includes both a color section and a generic (black and white) section.
+
+##### Input Parameters (6)  
+The function receives six input parameters:  
+- w: width of the image
+- h: height of the image
+- durationMovie: duration (in seconds) of the color section of the video
+- durationCredits: duration (in seconds) of the black-and-white section of the video
+- fps: Frames Per Second of the video
+- unit: the size of the video should be converted to this unit
+
+##### Output Parameter (1)  
+The function should return the size of the video in the unit passed as a parameter.
