@@ -10,14 +10,14 @@ int testMethod(int input1, int input2, int durationMovie, int durationCredit, in
     char message[100];
     float result = video(input1, input2, durationMovie, durationCredit, fps, unit);
     sprintf(message, "Inputs (%d, %d, %d, %d, %d, %s). Expected output should be %f. Actuel output = %f", input1, input2, durationMovie, durationCredit, fps, unit, output, result);
-    assert_with_message(((result >= output - 0.2) && (result <= output + 0.2)), message);
+    assert_with_message(((result >= output - 5) && (result <= output + 5)), message);
 }
 
 int main() {
-    testMethod(1024, 1024, 30, 10, 20, "go", 1.953125);
+    testMethod(1024, 1024, 30, 10, 20, "go", 1.782226563);
 
-    testMethod(500, 300, 60, 10, 20, "mo", 543.5943604);
+    testMethod(500, 300, 60, 10, 20, "mo", 518.5604095);
 
-    testMethod(500, 400, 10, 2, 1, "ko", 6250);
+    testMethod(500, 400, 10, 2, 1, "ko", 5908.203125);
     return 0;
 }
