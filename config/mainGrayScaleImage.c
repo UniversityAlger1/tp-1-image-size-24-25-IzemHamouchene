@@ -9,7 +9,7 @@
 int testMethod(int input1, int input2, int output){
     char message[100];
     float result = grayScaleImage(input1, input2);
-    sprintf(message, "Inputs (%d, %d). Expected output should be %d. Actuel output = %d", input1, input2, output, result);
+    sprintf(message, "Inputs (%d, %d). Expected output should be %f. Actuel output = %f", input1, input2, output, result);
     assert_with_message(result == output, message);
 }
 
