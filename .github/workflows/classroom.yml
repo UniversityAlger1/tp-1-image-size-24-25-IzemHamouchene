@@ -1,0 +1,50 @@
+name: Autograding Tests
+'on':
+- workflow_dispatch
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: grayScaleImage test
+      id: grayscaleimage-test
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: grayScaleImage test
+        setup-command: ''
+        command: make test_grayScaleImage
+        timeout: 10
+        max-score: 1
+    - name: coloredBitmap test
+      id: coloredbitmap-test
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: coloredBitmap test
+        setup-command: ''
+        command: make test_ColoredBitmap
+        timeout: 10
+        max-score: 1
+    - name: video test
+      id: video-test
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: video test
+        setup-command: ''
+        command: make test_video
+        timeout: 10
+        max-score: 2
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        GRAYSCALEIMAGE-TEST_RESULTS: "${{steps.grayscaleimage-test.outputs.result}}"
+        COLOREDBITMAP-TEST_RESULTS: "${{steps.coloredbitmap-test.outputs.result}}"
+        VIDEO-TEST_RESULTS: "${{steps.video-test.outputs.result}}"
+      with:
+        runners: grayscaleimage-test,coloredbitmap-test,video-test
