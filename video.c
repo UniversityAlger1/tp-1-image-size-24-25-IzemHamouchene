@@ -8,8 +8,21 @@
 // Return value
 //   colored video size (based on the unit passed parametter)
 float video(int w, int h, int durationMovie, int durationCredits, int fps, char* unit) {
-   // YOUR CODE HERE - BEGIN
-
-   // YOUR CODE HERE - END
-   return 0;
+  
+  float c, bwCredit;
+  
+  if (strcmp(unit, "ko") == 0) {
+    c = (h*w* 8.0 * 3)/8/1024;
+    bwCredit = (h*w* 1)/8/1024;
+  } else if (strcmp(unit, "mo") == 0) {
+    c = (h*w* 8.0 * 3)/8/1024/1024;
+    bwCredit = (h*w* 1)/8/1024/1024;
+  } else {
+    c = (h*w* 8.0 * 3)/8/1024/1024/1024;
+    bwCredit = (h*w * 1)/8/1024/1024/1024;
+  }
+  
+  float coloredPart = c * fps * durationMovie;
+  float bwPart = bwCredit * fps * durationCredit;
+   return coloredPart + bwPart;
 }
