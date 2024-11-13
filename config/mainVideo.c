@@ -9,7 +9,7 @@
 int testMethod(int input1, int input2, int durationMovie, int durationCredit, int fps, char* unit, float output){
     char message[100];
     float result = video(input1, input2, durationMovie, durationCredit, fps, unit);
-    sprintf(message, "Inputs (%d, %d). Expected output should be %f. Actuel output = %f", input1, input2, output, result);
+    sprintf(message, "Inputs (%d, %d, %d, %d, %d, %s). Expected output should be %f. Actuel output = %f", input1, input2, durationMovie, durationCredit, fps, unit, output, result);
     assert_with_message(((result >= output - 0.2) && (result <= output + 0.2)), message);
 }
 
