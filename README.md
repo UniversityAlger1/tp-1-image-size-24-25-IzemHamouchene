@@ -2,7 +2,7 @@
 
 ## TP 1: Image/Video Size Calculation
 
-The goal of this practical is to apply the concepts learned during the [course](https://canvas.instructure.com/courses/10470827/files/273054605?module_item_id=118488408) for calculating the size of grayscale, colored images, and videos.
+The goal of these exercices is to apply the concepts learned during the [course](https://canvas.instructure.com/courses/10470827/files/273054605?module_item_id=118488408) for calculating the size of grayscale, colored images, and videos.
 
 **Reminder**  
 Each pixel of a grayscale image (Bitmap) is encoded in 8 bits.  
