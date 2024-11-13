@@ -1,3 +1,4 @@
+#include <string.h>
 #include "config/video.h"
 // Parameters:
 //   w: width of the image
