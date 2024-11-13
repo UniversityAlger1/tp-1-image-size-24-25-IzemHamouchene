@@ -6,7 +6,7 @@
 #include "grayScaleImage.h"
 #include "assert_with_message.h"
 
-int testMethod(int input1, int input2, int output){
+int testMethod(int input1, int input2, float output){
     char message[100];
     float result = grayScaleImage(input1, input2);
     sprintf(message, "Inputs (%d, %d). Expected output should be %f. Actuel output = %f", input1, input2, output, result);
