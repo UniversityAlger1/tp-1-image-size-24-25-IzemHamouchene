@@ -24,6 +24,6 @@ float video(int w, int h, int durationMovie, int durationCredits, int fps, char*
   }
   
   float coloredPart = c * fps * durationMovie;
-  float bwPart = bwCredit * fps * durationCredit;
+  float bwPart = bwCredit * fps * durationCredits;
    return coloredPart + bwPart;
 }
