@@ -46,8 +46,8 @@ You are asked to write a C function that calculates the size of a video, which i
 The function receives six input parameters:  
 - w: width of the image
 - h: height of the image
-- durationMovie: duration (in seconds) of the color part of the video
-- durationCredits: duration (in seconds) of the black-and-white part of the video
+- durationMovie: duration (in seconds) of the color section of the video
+- durationCredits: duration (in seconds) of the black-and-white section of the video
 - fps: Frames Per Second of the video
 - unit: the size of the video should be converted to this unit
 
